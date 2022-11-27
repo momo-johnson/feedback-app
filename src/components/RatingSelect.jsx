@@ -1,27 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useState, useContext } from "react";
 import FeedbackContext from "../context/FeedbackContext";
 import { useEffect } from "react";
-import FeedbackData from "../data/feedbackdata";
 //.item.rating
-function RatingSelect({select}) {
-  const { feedbackEdit } = useContext(FeedbackContext)
-  const [selected, setSelected] = useState(10)
-  useEffect(()=> {
+function RatingSelect({ select }) {
+  const { feedbackEdit } = useContext(FeedbackContext);
+  const [selected, setSelected] = useState(10);
+  useEffect(() => {
     //setSelected()
-    if(feedbackEdit.edit){
-      setSelected(Number(feedbackEdit['item'].rating))
+    if (feedbackEdit.edit) {
+      setSelected(Number(feedbackEdit["item"].rating));
     }
-   
+  }, [feedbackEdit]);
 
-  }, [feedbackEdit])
-  
-  
-  const  handleChange = (event) => {
-    setSelected(Number(event.target.value))
-    select(+event.target.value)
-  }
+  const handleChange = (event) => {
+    setSelected(Number(event.target.value));
+    select(+event.target.value);
+  };
   return (
     <ul className="rating">
       <li>
@@ -109,7 +104,6 @@ function RatingSelect({select}) {
           value="8"
           onChange={handleChange}
           checked={selected === 8}
-          
         />
         <label htmlFor="num8">8</label>
       </li>
@@ -138,7 +132,5 @@ function RatingSelect({select}) {
     </ul>
   );
 }
-
-RatingSelect.propTypes = {};
 
 export default RatingSelect;
