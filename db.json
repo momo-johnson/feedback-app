@@ -1,0 +1,19 @@
+{
+  "feedback": [
+    {
+      "rating": 7,
+      "text": "This is new feedback item. Then what should I say",
+      "id": 2
+    },
+    {
+      "rating": 7,
+      "text": "This is new feedback item. Another yes but I had to it.",
+      "id": 3
+    },
+    {
+      "rating": 6,
+      "text": "This is a new feedback item",
+      "id": 4
+    }
+  ]
+}
